@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main class="about-page">
+    <div class="about-grid">
+      <div class="about-image-placeholder" aria-hidden="true">
+        <!-- Placeholder for bio/portrait image -->
+      </div>
+      <div class="about-content">
+        <h2>Bio</h2>
+        <p class="about-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+        <h3>Contact me with any questions or design inquiries!</h3>
+      </div>
+    </div>
+
+    <section class="skills-section" aria-labelledby="skills-heading">
+      <h2 id="skills-heading" class="skills-heading">My Skills</h2>
+      <ul class="skills-list">
+        <li><h3>Illustration</h3></li>
+        <li><h3>UI/UX</h3></li>
+        <li><h3>Branding</h3></li>
+        <li><h3>Web Design</h3></li>
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .about-page {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .about-image-placeholder {
+    aspect-ratio: 3 / 4;
+    background-color: #F8F6F1;
+    width: 100%;
+    min-height: 280px;
+  }
+
+  @media (min-width: 768px) {
+    .about-image-placeholder {
+      min-height: 400px;
+      aspect-ratio: auto;
+    }
+  }
+
+  .about-content h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .about-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .about-body {
+    margin: 0;
+  }
+
+  /* Skills section – only the background stretches full width */
+  .skills-section {
+    position: relative;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .skills-section::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-white);
+    z-index: -1;
+  }
+
+  .skills-heading {
+    color: var(--color-heading);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+
+  .skills-list li {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+
+  .skills-list h3 {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    border-radius: 0;
+    font-size: var(--text-h3-size);
+    line-height: var(--text-h3-line);
+  }
+
+  @media (min-width: 640px) {
+    .skills-list {
+      gap: 1.25rem;
+    }
+
+    .skills-list li {
+      min-width: 140px;
+    }
+  }
+</style>
