@@ -1,0 +1,62 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner container">
+    <p class="footer-copy">© Emma Buehler {year}</p>
+
+    <div class="footer-icons" aria-label="Social links">
+      <a href="#" class="footer-icon-link" aria-label="LinkedIn (coming soon)">
+        <span class="footer-icon-placeholder" aria-hidden="true"></span>
+      </a>
+      <a href="#" class="footer-icon-link" aria-label="Email (coming soon)">
+        <span class="footer-icon-placeholder" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    width: 100%;
+    background-color: var(--color-light);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: var(--text-small-size);
+    line-height: var(--text-small-line);
+  }
+
+  .footer-copy {
+    margin: 0;
+    color: var(--color-heading);
+  }
+
+  .footer-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-icon-placeholder {
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    border: 2px solid var(--color-heading);
+    background-color: transparent;
+  }
+</style>
+

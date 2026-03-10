@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SubpageHero from "../components/SubpageHero.astro";
 ---
 
 <BaseLayout>
   <main class="about-page">
+    <SubpageHero title="About Me" />
+
     <div class="about-grid">
       <div class="about-image-placeholder" aria-hidden="true">
         <!-- Placeholder for bio/portrait image -->
@@ -31,21 +34,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style>
   .about-page {
-    padding-top: 2rem;
+    padding-top: 0;
     padding-bottom: 3rem;
   }
 
   .about-grid {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
     align-items: start;
+    padding: 2rem 1.5rem;
+  }
+
+  .about-grid::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-white);
+    z-index: -1;
   }
 
   @media (min-width: 768px) {
     .about-grid {
       grid-template-columns: 1fr 1fr;
       gap: 2.5rem;
+      padding: 3rem 2.5rem;
     }
   }
 
@@ -77,12 +95,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     margin: 0;
   }
 
-  /* Skills section – only the background stretches full width */
+  /* Skills section */
   .skills-section {
     position: relative;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    margin-top: 0;
+    padding: 3rem 0 2rem;
   }
 
   .skills-section::before {
@@ -126,7 +143,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     letter-spacing: 0.02em;
     color: var(--color-primary);
     background-color: var(--color-light);
-    border-radius: 0;
+    border-radius: 9999px;
     font-size: var(--text-h3-size);
     line-height: var(--text-h3-line);
   }

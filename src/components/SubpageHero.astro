@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="subpage-hero">
+  <h1>{title}</h1>
+</section>
+
+<style>
+  .subpage-hero {
+    position: relative;
+    margin-bottom: 0;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .subpage-hero::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-light);
+    z-index: -1;
+  }
+
+  .subpage-hero::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    height: 72px;
+    bottom: 0;
+    background-image: url("../assets/waveBorder.svg");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
+
